@@ -11,9 +11,6 @@ A lightweight and responsive web-based currency converter that allows users to c
 - 📱 Fully responsive design (works on desktop & mobile)
 - ⚡ Fast and minimal interface
 
-## 🚀 Live Demo
-
-Check out the live version: [Your Live Site URL](https://your-live-site-url.com)
 
 ## 🛠️ Technologies Used
 
@@ -22,7 +19,7 @@ Check out the live version: [Your Live Site URL](https://your-live-site-url.com)
 - JavaScript (Vanilla)
 - [Exchange Rate API] (add the actual API you used)
 
-## 🖼️ Screenshots
+
 
 ## 🧪 How to Use
 
