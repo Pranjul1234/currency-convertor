@@ -1,83 +1,159 @@
+/* Base Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
- * {
-   margin: 0;
-   padding: 0;
- }
- 
- body {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   min-height: 100vh;
-   background-color: #f4e4ba;
- }
- 
- .container {
-   background-color: #fff;
-   padding: 2rem;
-   border-radius: 1rem;
-   min-height: 45vh;
-   width: 40vh;
- }
- 
- form {
-   margin: 2rem 0 1rem 0;
- }
- 
- form select,
- button,
- input {
-   width: 100%;
-   border: none;
-   outline: none;
-   border-radius: 0.75rem;
- }
- 
- form input {
-   border: 1px solid lightgray;
-   font-size: 1rem;
-   height: 3rem;
-   padding-left: 0.5rem;
- }
- 
- .dropdown {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   margin-top: 2rem;
- }
- 
- .dropdown i {
-   font-size: 1.5rem;
-   margin-top: 1rem;
- }
- 
- .select-container img {
-   max-width: 2rem;
- }
- 
- .select-container {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 6rem;
-   border-radius: 0.5rem;
-   border: 1px solid lightgray;
- }
- 
- .select-container select {
-   font-size: 1rem;
-   width: auto;
- }
- 
- .msg {
-   margin: 2rem 0 2rem 0;
- }
- 
- form button {
-   height: 3rem;
-   background-color: #af4d98;
-   color: #fff;
-   font-size: 1.15rem;
-   cursor: pointer;
- }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Container Card */
+.container {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.65);
+  border-radius: 2rem;
+  padding: 2rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  width: 95%;
+  max-width: 420px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  transition: transform 0.4s ease;
+}
+
+.container:hover {
+  transform: scale(1.02);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.75rem;
+}
+
+/* Input Styling */
+form input {
+  height: 3rem;
+  padding-left: 1rem;
+  font-size: 1rem;
+  border-radius: 0.75rem;
+  border: 2px solid #e0e0e0;
+  background: rgba(255, 255, 255, 0.6);
+  transition: border-color 0.3s;
+}
+
+form input:focus {
+  border-color: #ff4081;
+  outline: none;
+}
+
+/* Dropdown Section */
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.dropdown i {
+  font-size: 2rem;
+  color: #ff4081;
+  transition: transform 0.4s ease;
+}
+
+.dropdown i:hover {
+  transform: rotate(180deg);
+}
+
+/* Select Container */
+.select-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid #ddd;
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: #fff;
+  transition: box-shadow 0.3s;
+}
+
+.select-container:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.select-container img {
+  max-width: 2rem;
+  border-radius: 50%;
+}
+
+.select-container select {
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Message */
+.msg {
+  text-align: center;
+  margin: 2rem 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+}
+
+/* Neon Button */
+form button {
+  height: 3rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #ff4081, #ff80ab);
+  box-shadow: 0 0 10px #ff4081, 0 0 40px #ff4081, 0 0 80px #ff4081;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+form button:hover {
+  box-shadow: 0 0 20px #ff4081, 0 0 60px #ff4081, 0 0 100px #ff4081;
+  transform: translateY(-2px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .dropdown {
+    flex-direction: column;
+  }
+
+  .container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
